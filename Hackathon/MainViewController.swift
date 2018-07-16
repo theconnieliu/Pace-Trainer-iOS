@@ -40,6 +40,11 @@ class MainViewController: UIViewController {
 
 }
 
+
+
+// THE FOLLOWING CODE IS MEANT TO CREATE THREE SLIDERS IN THE PICKER VIEW
+// HOURS, MINUTES, AND SECONDS
+
 extension MainViewController:UIPickerViewDelegate,UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3

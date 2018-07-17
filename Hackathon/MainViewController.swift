@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class MainViewController: UIViewController {
     
@@ -18,7 +19,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        calculatePace()
         // Do any additional setup after loading the view.
     }
 
@@ -30,14 +31,36 @@ class MainViewController: UIViewController {
 
     /*
     // MARK: - Navigation
-
+ 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+//  THE FOLLOWING FUNCTION CALCULATES PACE PER MILE WITH DISTANCE AND TIME VARIABLES. IT HAS NOT YET BEEN HOOKED UP TO THE UI
+    func calculatePace(){
+        
+        let hours:Double = 2
+        let minutes:Double = 25
+        let seconds:Double = 30
+        let distance:Double = 26.2
+        
+//      The code below is the actual math stuff (turn everything to just seconds)
+        let unParsedTime:Double = (((seconds) + (hours*60*60) + (minutes*60))/(distance))/60
+        
+        
+//      The code below is separating the returned minutes
+        let parsedTime:[String] = String(unParsedTime).components(separatedBy: ".")
+        let finalMinutes = parsedTime[0]
+        let fractionSeconds: String = ((".")+parsedTime[1])
+        let doubleSeconds: Double = Double(fractionSeconds)!
+        let finalSeconds: Double = doubleSeconds * 60
+        let formatedFinalSeconds: String = String(format: "%.2f", finalSeconds)
+        print("\(finalMinutes):\(formatedFinalSeconds)/mile")
+    }
+    
 }
 
 

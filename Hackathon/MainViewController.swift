@@ -41,17 +41,17 @@ class MainViewController: UIViewController {
     
 //  THE FOLLOWING FUNCTION CALCULATES PACE PER MILE WITH DISTANCE AND TIME VARIABLES. IT HAS NOT YET BEEN HOOKED UP TO THE UI
     func calculatePace(){
-        
+
         let hours:Double = 0
-        let minutes:Double = 16
-        let seconds:Double = 45
-        let distance:Double = 3.1
+        let minutes:Double = 15
+        let seconds:Double = 0
+        let distance:Double = 2.8
         
 //      The code below is the actual math stuff (turn everything to just seconds)
         let unParsedTime:Double = (((seconds) + (hours*60*60) + (minutes*60))/(distance))/60
         
         
-//      The code below is separating the returned minutes and parses everything
+//      The code below is separating the returned minutes and parsing them
         let parsedTime:[String] = String(unParsedTime).components(separatedBy: ".")
         let finalMinutes = parsedTime[0]
         let fractionSeconds: String = ((".")+parsedTime[1])
@@ -60,7 +60,6 @@ class MainViewController: UIViewController {
         let formatedFinalSeconds: String = String(format: "%.2f", finalSeconds)
         print("\(finalMinutes):\(formatedFinalSeconds)/mile")
     }
-    
 }
 
 

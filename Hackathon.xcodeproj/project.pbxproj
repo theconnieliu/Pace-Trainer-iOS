@@ -13,6 +13,7 @@
 		231A7E2420FD0816005B6094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 231A7E2320FD0816005B6094 /* Assets.xcassets */; };
 		231A7E2720FD0816005B6094 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231A7E2520FD0816005B6094 /* LaunchScreen.storyboard */; };
 		231A7E2F20FD0C4E005B6094 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A7E2E20FD0C4E005B6094 /* MainViewController.swift */; };
+		231A7E3320FEA6C9005B6094 /* DisplayAllInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231A7E3220FEA6C9005B6094 /* DisplayAllInfo.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		231A7E2620FD0816005B6094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		231A7E2820FD0816005B6094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		231A7E2E20FD0C4E005B6094 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		231A7E3220FEA6C9005B6094 /* DisplayAllInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DisplayAllInfo.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		231A7E1820FD0816005B6094 /* Hackathon */ = {
 			isa = PBXGroup;
 			children = (
+				231A7E3220FEA6C9005B6094 /* DisplayAllInfo.storyboard */,
 				231A7E2E20FD0C4E005B6094 /* MainViewController.swift */,
 				231A7E1920FD0816005B6094 /* AppDelegate.swift */,
 				231A7E1D20FD0816005B6094 /* Main.storyboard */,
@@ -129,6 +132,7 @@
 				231A7E2720FD0816005B6094 /* LaunchScreen.storyboard in Resources */,
 				231A7E2420FD0816005B6094 /* Assets.xcassets in Resources */,
 				231A7E1F20FD0816005B6094 /* Main.storyboard in Resources */,
+				231A7E3320FEA6C9005B6094 /* DisplayAllInfo.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

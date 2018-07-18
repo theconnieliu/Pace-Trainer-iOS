@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230D9CF720FFFB3300CAA4BB /* TextLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230D9CF620FFFB3300CAA4BB /* TextLimit.swift */; };
 		231A7E1A20FD0816005B6094 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A7E1920FD0816005B6094 /* AppDelegate.swift */; };
 		231A7E1F20FD0816005B6094 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231A7E1D20FD0816005B6094 /* Main.storyboard */; };
 		231A7E2220FD0816005B6094 /* Hackathon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 231A7E2020FD0816005B6094 /* Hackathon.xcdatamodeld */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		230D9CF620FFFB3300CAA4BB /* TextLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLimit.swift; sourceTree = "<group>"; };
 		231A7E1620FD0816005B6094 /* Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		231A7E1920FD0816005B6094 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		231A7E1E20FD0816005B6094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				231A7E3220FEA6C9005B6094 /* DisplayAllInfo.storyboard */,
 				231A7E4020FFD426005B6094 /* DisplayAllInfoViewController.swift */,
 				231A7E2E20FD0C4E005B6094 /* MainViewController.swift */,
+				230D9CF620FFFB3300CAA4BB /* TextLimit.swift */,
 				231A7E1920FD0816005B6094 /* AppDelegate.swift */,
 				231A7E1D20FD0816005B6094 /* Main.storyboard */,
 				231A7E2320FD0816005B6094 /* Assets.xcassets */,
@@ -170,6 +173,7 @@
 				231A7E3F20FFB3BF005B6094 /* CoreDataHelper.swift in Sources */,
 				6F032E8E20FFA76500EC69E1 /* ListStatsTableViewController.swift in Sources */,
 				6F032E9020FFA76500EC69E1 /* ListStatsTableViewCell.swift in Sources */,
+				230D9CF720FFFB3300CAA4BB /* TextLimit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

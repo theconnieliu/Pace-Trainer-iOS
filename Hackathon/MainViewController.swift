@@ -62,9 +62,11 @@ class MainViewController: UIViewController {
         }
 
         let totalMileTime = ((((hourAmount*120) + (minuteAmount*60) + (secondAmount))/distanceAmount) / 60)
+        let totalMile = String(format: "%.2f", totalMileTime)
         let totalLapTime = totalMileTime / 4
-        targetMileOutput.text = String(totalMileTime)
-        targetLapOutput.text = String(totalLapTime)
+        let totalLap = String(format: "%.2f", totalLapTime)
+        targetMileOutput.text = String(totalMile)
+        targetLapOutput.text = String(totalLap)
         
     }
     

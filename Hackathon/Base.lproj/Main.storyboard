@@ -25,7 +25,7 @@
                                         <rect key="frame" x="151" y="52" width="44" height="52"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="43"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyz-sA-r8X">
                                         <rect key="frame" x="134" y="10.000000000000002" width="148" height="26.666666666666671"/>
@@ -96,6 +96,14 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cj6-sO-bUO">
+                                        <rect key="frame" x="324" y="72" width="64" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Calculate"/>
+                                        <connections>
+                                            <action selector="calculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="96P-8S-swY"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.36862745098039218" green="0.69019607843137254" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -293,6 +301,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="calculateButton" destination="Cj6-sO-bUO" id="eoo-J7-8IG"/>
                         <outlet property="elapsedHourInput" destination="GfN-bP-g3L" id="Mqg-NK-lyN"/>
                         <outlet property="elapsedMinuteInput" destination="YN5-eQ-etl" id="nQs-W6-84F"/>
                         <outlet property="elapsedSecondInput" destination="HGl-gd-VnJ" id="p37-zD-1n7"/>

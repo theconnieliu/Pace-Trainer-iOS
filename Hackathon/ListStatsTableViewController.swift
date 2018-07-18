@@ -10,7 +10,7 @@ import UIKit
 
 class ListStatsTableViewController: UITableViewController {
     
-    var stats = [Stat]()
+    var stats = [Stat]() 
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,6 +9,8 @@
 import UIKit
 
 class ListStatsTableViewController: UITableViewController {
+    
+    var stats = [Stat]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,31 +22,44 @@ class ListStatsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//        // Dispose of any resources that can be recreated.
+//    }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 10
+       
+//        return stats.count
+        return 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "listStatsTableViewCell", for: indexPath)
-        cell.textLabel?.text = "Cell Row: \(indexPath.row) Section: \(indexPath.section)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "listStatsTableViewCell", for: indexPath) as! ListStatsTableViewCell
+        //let stat = stats[indexPath.row]
+        cell.statDateLabel?.text = "I don't know how to show mod time"
+        //stat.modificationTime.convertToString()
 
-        // Configure the cell...
+     
 
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // 1
+        guard let identifier = segue.identifier else { return }
+        
+        // 2
+        if identifier == "displayStat" {
+            print("Display the Stats")
+        }
     }
  
 

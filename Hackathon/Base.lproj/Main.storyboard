@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mLw-sc-oNq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mLw-sc-oNq">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +39,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Do7-6k-zJU">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Do7-6k-zJU">
                                         <rect key="frame" x="309" y="169" width="95" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="AIG-d5-46q"/>
@@ -67,7 +67,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yDp-sV-x2k">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yDp-sV-x2k">
                                         <rect key="frame" x="10" y="170" width="95" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="95" id="A49-Jh-kh0"/>
@@ -77,7 +77,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ALm-A6-SIf">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ALm-A6-SIf">
                                         <rect key="frame" x="160" y="170.66666666666666" width="95" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="CSA-TO-sN9"/>
@@ -136,7 +136,7 @@
                                         <color key="textColor" red="0.054901960784313725" green="0.44705882352941179" blue="0.41568627450980394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0:00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GfN-bP-g3L">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GfN-bP-g3L">
                                         <rect key="frame" x="25" y="139" width="95" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="95" id="hsw-lc-1PR"/>
@@ -145,7 +145,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HGl-gd-VnJ">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HGl-gd-VnJ">
                                         <rect key="frame" x="294" y="138" width="95" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="95" id="dCR-uA-6bh"/>
@@ -179,8 +179,11 @@
                                         <state key="normal" title="Save">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8qD-lt-nKP"/>
+                                        </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YN5-eQ-etl">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YN5-eQ-etl">
                                         <rect key="frame" x="159" y="139" width="95" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="95" id="KDY-ei-2s1"/>
@@ -282,12 +285,37 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pace Tracker" id="eyy-Fr-ENz">
-                        <barButtonItem key="rightBarButtonItem" title="View Stats" id="LyY-pB-Jnb"/>
+                        <barButtonItem key="rightBarButtonItem" title="View Stats" id="LyY-pB-Jnb">
+                            <color key="tintColor" red="0.0" green="0.46274509800000002" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="WOl-me-9pe" kind="show" identifier="show stats" id="5gu-Ur-ocF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="elapsedHourInput" destination="GfN-bP-g3L" id="Mqg-NK-lyN"/>
+                        <outlet property="elapsedMinuteInput" destination="YN5-eQ-etl" id="nQs-W6-84F"/>
+                        <outlet property="elapsedSecondInput" destination="HGl-gd-VnJ" id="p37-zD-1n7"/>
+                        <outlet property="saveButton" destination="Bw3-pY-z1Q" id="Ehj-Dz-upA"/>
+                        <outlet property="targetDistanceInput" destination="oUp-40-T0F" id="j4b-ez-e3v"/>
+                        <outlet property="targetHourInput" destination="yDp-sV-x2k" id="9ES-aI-rwG"/>
+                        <outlet property="targetLapOutput" destination="azr-Rl-wW5" id="Mir-Vl-OpL"/>
+                        <outlet property="targetMileOutput" destination="cDd-MQ-psv" id="FSo-T0-Eok"/>
+                        <outlet property="targetMinuteInput" destination="ALm-A6-SIf" id="ivo-1Z-fgQ"/>
+                        <outlet property="targetSecondInput" destination="Do7-6k-zJU" id="gp0-gm-ydD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="362.31884057971018" y="30.978260869565219"/>
+        </scene>
+        <!--ListStats-->
+        <scene sceneID="89j-9d-wUm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ListStats" id="WOl-me-9pe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FBI-dF-RLG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="978" y="-245"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f7L-Dg-BSN">

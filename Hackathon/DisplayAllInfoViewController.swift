@@ -27,19 +27,19 @@ class DisplayAllInfoViewController: UIViewController {
         actualMileTimeLabel.text = ""
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if let stat = stat {
-            targetDistanceLabel.text = stat.target
-            targetTimeLabel.text = stat.
-            averageMileTimeLabel.text = stat.
-            averageLapTimeNeeded.text = stat.
-            actualMileTimeLabel.text = stat.
-        } else {
-            titleTextField.text = ""
-            contentTextView.text = ""
-        }//if else
-    }//view will appear
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        if let stat = stat {
+//            targetDistanceLabel.text = stat.target
+//            targetTimeLabel.text = stat.
+//            averageMileTimeLabel.text = stat.
+//            averageLapTimeNeeded.text = stat.
+//            actualMileTimeLabel.text = stat.
+//        } else {
+//            titleTextField.text = ""
+//            contentTextView.text = ""
+//        }//if else
+//    }//view will appear
     
 
     /*

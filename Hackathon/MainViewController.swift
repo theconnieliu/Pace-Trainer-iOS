@@ -10,6 +10,8 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    @IBOutlet weak var calculateButton: UIButton!
+    
     //Target Parameters View
     @IBOutlet weak var targetDistanceInput: UITextField!
     @IBOutlet weak var targetHourInput: UITextField!
@@ -27,20 +29,51 @@ class MainViewController: UIViewController {
     
     //Save Button
     @IBOutlet weak var saveButton: UIButton!
+    
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         //experimenting
         print("Save Button Tapped")
     }
     
     
+    @IBAction func calculateButtonTapped(_ sender: Any) {
+       calculate()
+    }
+    
+    func calculate() {
+        if self.targetHourInput.isFirstResponder {
+            self.targetHourInput.resignFirstResponder()
+        }
+        guard let targetHourInput = self.targetHourInput.text,
+            let hourAmount = Double(targetHourInput) else {
+                return
+        }
+        guard let targetMinuteInput = self.targetMinuteInput.text,
+            let minuteAmount = Double(targetMinuteInput) else {
+                return
+        }
+        guard let targetSecondInput = self.targetSecondInput.text,
+            let secondAmount = Double(targetSecondInput) else {
+                return
+        }
+        guard let targetDistanceInput = self.targetDistanceInput.text,
+            let distanceAmount = Double(targetDistanceInput) else {
+                return
+        }
+
+        let totalMileTime = ((((hourAmount*120) + (minuteAmount*60) + (secondAmount))/distanceAmount) / 60)
+        let totalMile = String(format: "%.2f", totalMileTime)
+        let totalLapTime = totalMileTime / 4
+        let totalLap = String(format: "%.2f", totalLapTime)
+        targetMileOutput.text = String(totalMile)
+        targetLapOutput.text = String(totalLap)
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
-
-    func calculatePace() {
-        
     }
     
 

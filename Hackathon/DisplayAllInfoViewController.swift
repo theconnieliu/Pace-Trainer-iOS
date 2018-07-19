@@ -26,30 +26,51 @@ class DisplayAllInfoViewController: UIViewController {
         averageLapTimeNeeded.text = ""
         actualMileTimeLabel.text = ""
     }
-
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        if let stat = stat {
-//            targetDistanceLabel.text = stat.target
-//            targetTimeLabel.text = stat.
-//            averageMileTimeLabel.text = stat.
-//            averageLapTimeNeeded.text = stat.
-//            actualMileTimeLabel.text = stat.
-//        } else {
-//            titleTextField.text = ""
-//            contentTextView.text = ""
-//        }//if else
-//    }//view will appear
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let stat = stat {
+            targetDistanceLabel.text = stat.targetDistance
+            targetTimeLabel.text = stat.targetTime
+            averageMileTimeLabel.text = stat.averageMileTime
+            averageLapTimeNeeded.text = stat.averageLapTime
+            actualMileTimeLabel.text = stat.actualMileTime
+        } else {
+            targetDistanceLabel.text = ""
+            targetTimeLabel.text = ""
+            averageMileTimeLabel.text = ""
+            averageLapTimeNeeded.text = ""
+            actualMileTimeLabel.text = ""
+        }//if else
+    }//view will appear
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        guard let identifier = segue.identifier else { return }
+        
+        switch identifier {
+        case "saveStat" where stat != nil:
+            stat?.targetDistance = targetDistanceLabel.text ?? ""
+            stat?.targetTime = targetTimeLabel.text ?? ""
+            stat?.averageMileTime = averageMileTimeLabel.text ?? ""
+            stat?.averageLapTime = averageLapTimeNeeded.text ?? ""
+            stat?.actualMileTime = actualMileTimeLabel.text ?? ""
+            stat?.modificationTime = Date()
+            CoreDataHelper.saveStat()
+            
+        case "saveStat" where stat == nil:
+            let stat = CoreDataHelper.newStat()
+            stat.targetDistance = targetDistanceLabel.text ?? ""
+            stat.targetTime = targetTimeLabel.text ?? ""
+            stat.averageMileTime = averageMileTimeLabel.text ?? ""
+            stat.averageLapTime = averageLapTimeNeeded.text ?? ""
+            stat.actualMileTime = actualMileTimeLabel.text ?? ""
+            stat.modificationTime = Date()
+            CoreDataHelper.saveStat()
+            
+        default:
+            print("unexpected segue identifier")
+        }
     }
-    */
 
 }
+

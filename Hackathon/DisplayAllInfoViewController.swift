@@ -12,29 +12,44 @@ class DisplayAllInfoViewController: UIViewController {
 
     @IBOutlet weak var targetDistanceLabel: UILabel!
     @IBOutlet weak var targetTimeLabel: UILabel!
+    @IBOutlet weak var targetMinuteLabel: UILabel!
+    @IBOutlet weak var targetSecondLabel: UILabel!
     @IBOutlet weak var averageMileTimeLabel: UILabel!
     @IBOutlet weak var averageLapTimeNeeded: UILabel!
     @IBOutlet weak var actualMileTimeLabel: UILabel!
+    @IBOutlet weak var actualMinuteTimeLabel: UILabel!
+    @IBOutlet weak var actualSecondTimeLabel: UILabel!
     
-    var stat: Stat?
+    
+//    var stat: Stat?
+    var runInfo: RunInfo?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         targetDistanceLabel.text = ""
         targetTimeLabel.text = ""
+        targetMinuteLabel.text = ""
+        targetSecondLabel.text = ""
         averageMileTimeLabel.text = ""
         averageLapTimeNeeded.text = ""
         actualMileTimeLabel.text = ""
+        actualMinuteTimeLabel.text = ""
+        actualSecondTimeLabel.text = ""
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let stat = stat {
-            targetDistanceLabel.text = stat.targetDistance
-            targetTimeLabel.text = stat.targetTime
-            averageMileTimeLabel.text = stat.averageMileTime
-            averageLapTimeNeeded.text = stat.averageLapTime
-            actualMileTimeLabel.text = stat.actualMileTime
+        if let stat = runInfo {
+            runInfo?.miles = targetDistanceLabel.text
+            runInfo?.targetALT = averageLapTimeNeeded.text
+            runInfo?.targetAMT = averageMileTimeLabel.text
+            runInfo?.elapsedHours = actualMileTimeLabel.text
+            runInfo?.elapsedMinutes = actualMinuteTimeLabel.text
+            runInfo?.elapsedSeconds = actualSecondTimeLabel.text
+            runInfo?.targetHours = targetTimeLabel.text
+            runInfo?.targetMinutes = targetMinuteLabel.text
+            runInfo?.targetSeconds = targetSecondLabel.text
         } else {
             targetDistanceLabel.text = ""
             targetTimeLabel.text = ""

@@ -27,11 +27,24 @@ class MainViewController: UIViewController {
     @IBOutlet weak var elapsedMinuteInput: UITextField!
     @IBOutlet weak var elapsedSecondInput: UITextField!
     
+    var runInfo: RunInfo?
+    
     //Save Button
     @IBOutlet weak var saveButton: UIButton!
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         //experimenting
+        var runInfos = [RunInfo]()
+        //{
+//            didSet {
+//                tableView.reloadData()
+//            }
+        //}
+
+        CoreDataHelper.saveStat()
+        //Here, we want to save the runInfo Object first
+        
+        self.performSegue(withIdentifier: "saveStat", sender: self)
         print("Save Button Tapped")
     }
     
@@ -107,6 +120,12 @@ class MainViewController: UIViewController {
         
         targetMileOutput.text = String(finalMinutes + ":" + String(finalSeconds))
         targetLapOutput.text = String(finalMinutesL + ":" + String(finalSecondsL))
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var MainViewController = segue.destination as? DisplayAllInfoViewController
+        MainViewController?.runInfo = runInfo
+        
     }
     
     

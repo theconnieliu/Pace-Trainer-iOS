@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="RunInfo" representedClassName="RunInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="elapsedHours" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="elapsedMinutes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="elapsedSeconds" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="miles" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="targetALT" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="targetAMT" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="targetHours" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="targetMinutes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="targetSeconds" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Stat" representedClassName="Stat" syncable="YES" codeGenerationType="class">
         <attribute name="actualMileTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="averageLapTime" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,5 +21,6 @@
     </entity>
     <elements>
         <element name="Stat" positionX="-36" positionY="9" width="128" height="135"/>
+        <element name="RunInfo" positionX="-36" positionY="54" width="128" height="180"/>
     </elements>
 </model>

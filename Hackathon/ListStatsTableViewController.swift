@@ -46,11 +46,10 @@ class ListStatsTableViewController: UITableViewController {
             // calling the displayNoteVC
             let DisplayAllInfoViewController = segue.destination as! DisplayAllInfoViewController
             // cast sender(Any) to Note
-            let stat = sender as? Stat
+            let runInfo = sender as? RunInfo
             // pass the value of note to note of Dsiplay Note VC
-            DisplayAllInfoViewController.stat = stat
+            DisplayAllInfoViewController.runInfo = runInfo
         }
     }
-    
 
 }

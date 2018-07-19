@@ -223,7 +223,6 @@
                                         </state>
                                         <connections>
                                             <action selector="saveButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8qD-lt-nKP"/>
-                                            <segue destination="WOl-me-9pe" kind="show" identifier="saveStat" id="GcU-bc-dqQ"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YN5-eQ-etl">
@@ -348,6 +347,7 @@
                         <outlet property="targetMileOutput" destination="cDd-MQ-psv" id="FSo-T0-Eok"/>
                         <outlet property="targetMinuteInput" destination="ALm-A6-SIf" id="ivo-1Z-fgQ"/>
                         <outlet property="targetSecondInput" destination="Do7-6k-zJU" id="gp0-gm-ydD"/>
+                        <segue destination="WOl-me-9pe" kind="show" identifier="saveStat" id="7yc-IC-ecG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -382,6 +382,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GcU-bc-dqQ"/>
+        <segue reference="7yc-IC-ecG"/>
     </inferredMetricsTieBreakers>
 </document>

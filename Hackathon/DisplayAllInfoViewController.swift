@@ -44,33 +44,33 @@ class DisplayAllInfoViewController: UIViewController {
         }//if else
     }//view will appear
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let identifier = segue.identifier else { return }
-        
-        switch identifier {
-        case "saveStat" where stat != nil:
-            stat?.targetDistance = targetDistanceLabel.text ?? ""
-            stat?.targetTime = targetTimeLabel.text ?? ""
-            stat?.averageMileTime = averageMileTimeLabel.text ?? ""
-            stat?.averageLapTime = averageLapTimeNeeded.text ?? ""
-            stat?.actualMileTime = actualMileTimeLabel.text ?? ""
-            stat?.modificationTime = Date()
-            CoreDataHelper.saveStat()
-            
-        case "saveStat" where stat == nil:
-            let stat = CoreDataHelper.newStat()
-            stat.targetDistance = targetDistanceLabel.text ?? ""
-            stat.targetTime = targetTimeLabel.text ?? ""
-            stat.averageMileTime = averageMileTimeLabel.text ?? ""
-            stat.averageLapTime = averageLapTimeNeeded.text ?? ""
-            stat.actualMileTime = actualMileTimeLabel.text ?? ""
-            stat.modificationTime = Date()
-            CoreDataHelper.saveStat()
-            
-        default:
-            print("unexpected segue identifier")
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let identifier = segue.identifier else { return }
+//        
+//        switch identifier {
+//        case "saveStat" where stat != nil:
+//            stat?.targetDistance = targetDistanceLabel.text ?? ""
+//            stat?.targetTime = targetTimeLabel.text ?? ""
+//            stat?.averageMileTime = averageMileTimeLabel.text ?? ""
+//            stat?.averageLapTime = averageLapTimeNeeded.text ?? ""
+//            stat?.actualMileTime = actualMileTimeLabel.text ?? ""
+//            stat?.modificationTime = Date()
+//            CoreDataHelper.saveStat()
+//            
+//        case "saveStat" where stat == nil:
+//            let stat = CoreDataHelper.newStat()
+//            stat.targetDistance = targetDistanceLabel.text ?? ""
+//            stat.targetTime = targetTimeLabel.text ?? ""
+//            stat.averageMileTime = averageMileTimeLabel.text ?? ""
+//            stat.averageLapTime = averageLapTimeNeeded.text ?? ""
+//            stat.actualMileTime = actualMileTimeLabel.text ?? ""
+//            stat.modificationTime = Date()
+//            CoreDataHelper.saveStat()
+//            
+//        default:
+//            print("unexpected segue identifier")
+//        }
+//    }
 
 }
 

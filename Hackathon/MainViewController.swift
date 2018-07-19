@@ -41,33 +41,66 @@ class MainViewController: UIViewController {
     }
     
     func calculate() {
+        var secondAmount: Double = 0
+        var minuteAmount: Double = 0
+        var hourAmount: Double = 0
+        var distanceAmount: Double = 0
+        
         if self.targetHourInput.isFirstResponder {
             self.targetHourInput.resignFirstResponder()
         }
-        guard let targetHourInput = self.targetHourInput.text,
-            let hourAmount = Double(targetHourInput) else {
-                return
+
+        if let secondsText = targetSecondInput.text {
+            if secondsText.isEmpty {
+                secondAmount = 0
+            } else {
+                secondAmount = Double(secondsText) ?? 0
+            }
         }
-        guard let targetMinuteInput = self.targetMinuteInput.text,
-            let minuteAmount = Double(targetMinuteInput) else {
-                return
+        
+        if let minutesText = targetMinuteInput.text {
+            if minutesText.isEmpty {
+                minuteAmount = 0
+            } else {
+                minuteAmount = Double(minutesText) ?? 0
+            }
         }
-        guard let targetSecondInput = self.targetSecondInput.text,
-            let secondAmount = Double(targetSecondInput) else {
-                return
+        
+        if let hoursText = targetHourInput.text {
+            if hoursText.isEmpty {
+                hourAmount = 0
+            } else {
+                hourAmount = Double(hoursText) ?? 0
+            }
         }
-        guard let targetDistanceInput = self.targetDistanceInput.text,
-            let distanceAmount = Double(targetDistanceInput) else {
-                return
+        
+        if let distanceText = targetDistanceInput.text {
+            if distanceText.isEmpty {
+                distanceAmount = 0
+            } else {
+                distanceAmount = Double(distanceText) ?? 0
+            }
         }
 
-        let totalMileTime = ((((hourAmount*120) + (minuteAmount*60) + (secondAmount))/distanceAmount) / 60)
+        let totalMileTime = ((((hourAmount*60*60) + (minuteAmount*60) + (secondAmount))/distanceAmount) / 60)
+        
         let totalMile = String(format: "%.2f", totalMileTime)
         let totalLapTime = totalMileTime / 4
         let totalLap = String(format: "%.2f", totalLapTime)
-        targetMileOutput.text = String(totalMile)
-        targetLapOutput.text = String(totalLap)
         
+//      seperating the values to turn the fraction of a minute into actual seconds
+        let parsedTime:[String] = String(totalMile).components(separatedBy: ".")
+        let finalMinutes = parsedTime[0]
+        let fractionSeconds: String = ((".")+parsedTime[1])
+        let finalSeconds: Double = Double(fractionSeconds)!*60
+//      for lap time
+        let parsedTimeL:[String] = String(totalLap).components(separatedBy: ".")
+        let finalMinutesL = parsedTimeL[0]
+        let fractionSecondsL: String = ((".")+parsedTimeL[1])
+        let finalSecondsL: Double = Double(fractionSecondsL)!*60
+        
+        targetMileOutput.text = String(finalMinutes + ":" + String(finalSeconds))
+        targetLapOutput.text = String(finalMinutesL + ":" + String(finalSecondsL))
     }
     
     

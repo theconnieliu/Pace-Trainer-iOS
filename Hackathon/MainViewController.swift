@@ -49,6 +49,12 @@ class MainViewController: UIViewController {
         if self.targetHourInput.isFirstResponder {
             self.targetHourInput.resignFirstResponder()
         }
+        if self.targetSecondInput.isFirstResponder {
+            self.targetSecondInput.resignFirstResponder()
+        }
+        if self.targetMinuteInput.isFirstResponder {
+            self.targetMinuteInput.resignFirstResponder()
+        }
 
         if let secondsText = targetSecondInput.text {
             if secondsText.isEmpty {

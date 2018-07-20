@@ -5,6 +5,7 @@
         <attribute name="elapsedMinutes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="elapsedSeconds" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="miles" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="modificationTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="targetALT" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="targetAMT" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="targetHours" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,7 +21,7 @@
         <attribute name="targetTime" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="RunInfo" positionX="-36" positionY="54" width="128" height="195"/>
         <element name="Stat" positionX="-36" positionY="9" width="128" height="135"/>
-        <element name="RunInfo" positionX="-36" positionY="54" width="128" height="180"/>
     </elements>
 </model>

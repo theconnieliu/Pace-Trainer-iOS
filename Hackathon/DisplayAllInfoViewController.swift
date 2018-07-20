@@ -40,16 +40,16 @@ class DisplayAllInfoViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let stat = runInfo {
-            runInfo?.miles = targetDistanceLabel.text
-            runInfo?.targetALT = averageLapTimeNeeded.text
-            runInfo?.targetAMT = averageMileTimeLabel.text
-            runInfo?.elapsedHours = actualMileTimeLabel.text
-            runInfo?.elapsedMinutes = actualMinuteTimeLabel.text
-            runInfo?.elapsedSeconds = actualSecondTimeLabel.text
-            runInfo?.targetHours = targetTimeLabel.text
-            runInfo?.targetMinutes = targetMinuteLabel.text
-            runInfo?.targetSeconds = targetSecondLabel.text
+        if let unwrappedRunInfo = runInfo {
+            unwrappedRunInfo.miles = targetDistanceLabel.text
+            unwrappedRunInfo.targetALT = averageLapTimeNeeded.text
+            unwrappedRunInfo.targetAMT = averageMileTimeLabel.text
+            unwrappedRunInfo.elapsedHours = actualMileTimeLabel.text
+            unwrappedRunInfo.elapsedMinutes = actualMinuteTimeLabel.text
+            unwrappedRunInfo.elapsedSeconds = actualSecondTimeLabel.text
+            unwrappedRunInfo.targetHours = targetTimeLabel.text
+            unwrappedRunInfo.targetMinutes = targetMinuteLabel.text
+            unwrappedRunInfo.targetSeconds = targetSecondLabel.text
         } else {
             targetDistanceLabel.text = ""
             targetTimeLabel.text = ""

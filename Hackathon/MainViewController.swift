@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MainViewController: UIViewController {
     
@@ -34,16 +35,51 @@ class MainViewController: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         //experimenting
-        var runInfos = [RunInfo]()
+//        var runInfos = [RunInfo]()
         //{
 //            didSet {
 //                tableView.reloadData()
 //            }
         //}
 
-        CoreDataHelper.saveStat()
-        //Here, we want to save the runInfo Object first
         
+        
+        // CORE DATA
+        
+        runInfo = CoreDataHelper.newRunInfo()
+        
+        runInfo?.miles = targetDistanceInput.text
+        runInfo?.targetALT = targetLapOutput.text
+        runInfo?.targetAMT = targetMileOutput.text
+        runInfo?.elapsedHours = elapsedHourInput.text
+        runInfo?.elapsedMinutes = elapsedMinuteInput.text
+        runInfo?.elapsedSeconds = elapsedSecondInput.text
+        runInfo?.targetHours = targetHourInput.text
+        runInfo?.targetMinutes = targetMinuteInput.text
+        runInfo?.targetSeconds = targetSecondInput.text
+        runInfo?.modificationTime = Date()
+        
+//        let context = CoreDataHelper.context
+//        let runInfo = NSEntityDescription.insertNewObject(forEntityName: "RunInfo", into: context)
+//
+//        // Saving the values in our textfields into Core Data
+//        runInfo.setValue(targetHourInput.text , forKey: "targetHours")
+//        runInfo.setValue(targetMinuteInput.text, forKey: "targetMinutes")
+//        runInfo.setValue(targetSecondInput.text, forKey: "targetSeconds")
+//        runInfo.setValue(elapsedHourInput.text, forKey: "elapsedHours")
+//
+//        // Saving the values in our labels into Core Data
+//        runInfo.setValue(elapsedMinuteInput.text, forKey: "elapsedMinutes")
+//        runInfo.setValue(elapsedSecondInput.text, forKey: "elapsedSeconds")
+//        runInfo.setValue(targetDistanceInput.text, forKey: "miles")
+//        runInfo.setValue(targetMileOutput.text, forKey: "targetAMT")
+//        runInfo.setValue(targetLapOutput.text, forKey: "targetALT")
+        
+        
+        CoreDataHelper.saveRunInfo()
+        
+        //Here, we want to save the runInfo Object first
+        print(" Did anything save: \(runInfo)")
         self.performSegue(withIdentifier: "saveStat", sender: self)
         print("Save Button Tapped")
     }
@@ -120,12 +156,16 @@ class MainViewController: UIViewController {
         
         targetMileOutput.text = String(finalMinutes + ":" + String(finalSeconds))
         targetLapOutput.text = String(finalMinutesL + ":" + String(finalSecondsL))
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var MainViewController = segue.destination as? DisplayAllInfoViewController
-        MainViewController?.runInfo = runInfo
-        
+//        let displayAllInfoViewController = segue.destination as? DisplayAllInfoViewController
+//        displayAllInfoViewController?.runInfo = runInfo
+        let listStatsTableViewController = segue.destination as? ListStatsTableViewController
+        guard let unwrappedRunInfo = runInfo else { return }
+        print(unwrappedRunInfo)
+        listStatsTableViewController?.runInfos.append(unwrappedRunInfo)
     }
     
     

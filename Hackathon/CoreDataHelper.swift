@@ -22,13 +22,13 @@ struct CoreDataHelper {
         return context
     }()
     
-    static func newStat() -> Stat {
-        let stat = NSEntityDescription.insertNewObject(forEntityName: "Stat", into: context) as! Stat
+    static func newRunInfo() -> RunInfo {
+        let runInfo = NSEntityDescription.insertNewObject(forEntityName: "RunInfo", into: context) as! RunInfo
         
-        return stat
+        return runInfo
     }
     
-    static func saveStat() {
+    static func saveRunInfo() {
         do {
             try context.save()
         } catch let error {
@@ -36,14 +36,14 @@ struct CoreDataHelper {
         }
     }
     
-    static func delete(stat: Stat) {
-        context.delete(stat)
-        saveStat()
+    static func delete(runInfo: RunInfo) {
+        context.delete(runInfo)
+        saveRunInfo()
     }
     
-    static func retrieveStats() -> [Stat] {
+    static func retrieveRunInfos() -> [RunInfo] {
         do {
-            let fetchRequest = NSFetchRequest<Stat>(entityName: "Stat")
+            let fetchRequest = NSFetchRequest<RunInfo>(entityName: "RunInfo")
             let results = try context.fetch(fetchRequest)
             
             return results

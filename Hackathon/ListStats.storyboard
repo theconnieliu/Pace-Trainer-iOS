@@ -26,8 +26,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="DateInputed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejA-ha-r4X">
-                                            <rect key="frame" x="21" y="19" width="333" height="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateInputed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejA-ha-r4X">
+                                            <rect key="frame" x="21" y="16" width="333" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="0.36862745098039218" green="0.69019607843137254" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -35,6 +35,8 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="ejA-ha-r4X" secondAttribute="trailing" constant="5" id="A6C-dx-7o5"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ejA-ha-r4X" secondAttribute="bottom" constant="5" id="Jsj-dE-fXd"/>
+                                        <constraint firstItem="ejA-ha-r4X" firstAttribute="top" secondItem="DNj-CJ-xGK" secondAttribute="topMargin" constant="5" id="Uqq-zl-zPo"/>
                                         <constraint firstItem="ejA-ha-r4X" firstAttribute="leading" secondItem="DNj-CJ-xGK" secondAttribute="leadingMargin" constant="5" id="ewv-kD-wHa"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -63,7 +65,7 @@
                 <viewControllerPlaceholder storyboardName="DisplayAllInfo" id="xlt-Al-gTl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RFO-C1-6nv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="493" y="-36"/>
+            <point key="canvasLocation" x="578" y="-35"/>
         </scene>
     </scenes>
 </document>

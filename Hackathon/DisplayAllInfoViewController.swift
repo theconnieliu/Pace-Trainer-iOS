@@ -27,15 +27,17 @@ class DisplayAllInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        targetDistanceLabel.text = ""
-        targetTimeLabel.text = ""
-        targetMinuteLabel.text = ""
-        targetSecondLabel.text = ""
-        averageMileTimeLabel.text = ""
-        averageLapTimeNeeded.text = ""
-        actualMileTimeLabel.text = ""
-        actualMinuteTimeLabel.text = ""
-        actualSecondTimeLabel.text = ""
+        targetDistanceLabel.text = runInfo?.miles
+        print("TESTING: \(runInfo?.miles)")
+        
+        targetTimeLabel.text = runInfo?.targetHours
+        targetMinuteLabel.text = runInfo?.targetMinutes
+        targetSecondLabel.text = runInfo?.targetSeconds
+        averageMileTimeLabel.text = runInfo?.targetAMT
+        averageLapTimeNeeded.text = runInfo?.targetALT
+        actualMileTimeLabel.text = runInfo?.miles
+        actualMinuteTimeLabel.text = runInfo?.elapsedMinutes
+        actualSecondTimeLabel.text = runInfo?.elapsedSeconds
     }
     
     override func viewWillAppear(_ animated: Bool) {

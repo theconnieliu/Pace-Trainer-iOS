@@ -60,26 +60,33 @@ class ListStatsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let runInfo = runInfos[indexPath.row]
-        let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        let displayAllInfoViewController = storyboard.instantiateViewController(withIdentifier: "DisplayAllInfoViewController") as! DisplayAllInfoViewController
+        let storyboard = UIStoryboard(name: "DisplayAllInfo", bundle: .main)
+        
+        guard let initialVC = storyboard.instantiateInitialViewController(),
+              let displayAllInfoViewController = initialVC as? DisplayAllInfoViewController else {
+                return assertionFailure("Storyboard not set up with DisplayAllInfoViewController")
+            }
+        
+
         displayAllInfoViewController.runInfo = runInfo
         
         navigationController?.pushViewController(displayAllInfoViewController, animated: true)
-//        self.performSegue(withIdentifier: "displayStat", sender: self)
+        
+//        self.performSegue(withIdentifier: "displayRunInfo", sender: self)
 //        let stat = self.stats[indexPath.row]
 //        self.performSegue(withIdentifier: "displayStat", sender: stat)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // check the right identifier/ segue
-        if segue.identifier == "displayRaceInfo"{
-            // calling the displayNoteVC
-            let DisplayAllInfoViewController = segue.destination as! DisplayAllInfoViewController
-            // cast sender(Any) to Note
-            let runInfo = sender as? RunInfo
-            // pass the value of note to note of Dsiplay Note VC
-            DisplayAllInfoViewController.runInfo = runInfo
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // check the right identifier/ segue
+//        if segue.identifier == "displayRunInfo"{
+//            // calling the displayNoteVC
+//            let displayAllInfoViewController = segue.destination as! DisplayAllInfoViewController
+//            // cast sender(Any) to Note
+//            let runInfo = sender as? RunInfo
+//            // pass the value of note to note of Dsiplay Note VC
+//            displayAllInfoViewController.runInfo = runInfo
+//        }
+//    }
 
 }
